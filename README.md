@@ -1,2 +1,2 @@
 # RAG-ingestion-scripts
-Script to extract, load, and translate pdf into vectorDB for RAG
+Script to extract, load, and translate pdf into Redis vectorDB for RAG
