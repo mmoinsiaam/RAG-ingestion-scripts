@@ -1,0 +1,47 @@
+# schema/redis_index.yaml
+index:
+  name: marine_bio_chunks
+  prefix: chunk
+  storage_type: json
+
+fields:
+  - name: chunk_id
+    type: tag
+
+  - name: content
+    type: text
+
+  - name: source_doc
+    type: tag
+
+  - name: chunk_index
+    type: numeric
+
+  - name: species_name
+    type: tag
+
+  - name: taxonomic_class
+    type: tag
+
+  - name: habitat_type
+    type: tag
+
+  - name: conservation_status
+    type: tag
+
+  - name: geographic_region
+    type: tag
+
+  - name: topic_category
+    type: tag
+
+  - name: publication_year
+    type: numeric
+
+  - name: embedding
+    type: vector
+    attrs:
+      dims: 1536
+      algorithm: hnsw
+      distance_metric: cosine
+      datatype: float32
