@@ -58,6 +58,12 @@ class ChunkMetadata(BaseModel):
         description="Year the source paper was published, if stated."
     )
 
+splitter = RecursiveCharacterTextSplitter(
+    chunk_size=500,
+    chunk_overlap=50,     # for continued context
+    length_function=len,
+)
+
 # Loading Env Vars
 load_dotenv()
 redis_url = os.environ.get("REDIS_URL")
