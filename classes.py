@@ -10,7 +10,6 @@ class HabitatType(str, Enum):
     POLAR = "polar"
     DEEP_SEA = "deep_sea"
 
-
 class ConservationStatus(str, Enum):
     LC = "LC"  # Least Concern
     NT = "NT"  # Near Threatened
@@ -28,10 +27,10 @@ class TopicCategory(str, Enum):
     ECOLOGY = "ecology"
     REPRODUCTION = "reproduction"
 
+"""Structured fields the LLM extracts per chunk. Passed as the
+response_format schema to OpenAI's structured outputs."""
 class ChunkMetadata(BaseModel):
-    """Structured fields the LLM extracts per chunk. Passed as the
-    response_format schema to OpenAI's structured outputs."""
-
+    
     species_name: list[str] = Field(
         default_factory=list,
         description="Species names explicitly mentioned in this chunk, common or scientific name."
